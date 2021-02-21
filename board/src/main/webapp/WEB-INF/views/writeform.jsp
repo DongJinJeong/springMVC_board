@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>글쓰기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="resources/js/main.js"></script>
 </head>
 <body>
