@@ -32,4 +32,10 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.listBoard(map);
 	}
 
+	@Override
+	public BoardDTO readBoard(int num) {
+		boardDAO.updateHit(num);
+		return boardDAO.detailBoard(num);
+	}
+
 }

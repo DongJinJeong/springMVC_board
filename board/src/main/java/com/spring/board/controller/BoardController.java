@@ -53,10 +53,13 @@ public class BoardController {
 		}
 		
 		int max = count - ((pg-1) * size); // 각 페이지의 최대 글번호, 103 - (1-1) * 10) => 103, 103 - (2-1) * 10) => 103 - 10 => 93
+		
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("begin", begin);
 		map.put("end", end);
+		
 		List<BoardDTO> list = boardService.listBoard(map);
+		
 		// model 에 정보들을 담는다.
 		model.addAttribute("list", list);
 		model.addAttribute("pg", pg);
@@ -67,6 +70,15 @@ public class BoardController {
 		model.addAttribute("max", max);
 		
 		return "list";
+	}
+	
+	@RequestMapping("/read/{num}/{pg}")
+	public String read(@PathVariable(value="num") int num, @PathVariable(value="pg") int pg, Model model) {
+		BoardDTO boardDTO = boardService.readBoard(num);
+		model.addAttribute("b", boardDTO);
+		model.addAttribute("pg", pg);
+		
+		return "read";
 	}
 	
 }

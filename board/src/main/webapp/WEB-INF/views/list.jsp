@@ -12,7 +12,7 @@
 	<h1>글목록</h1>
 	<a href="/writeform">글쓰기</a>
 	
-	<table style="width: 660px; board: 1" >
+	<table style="width: 660px" border="1">
 		<tr>
 			<th>글번호</th>
 			<th>제목</th>

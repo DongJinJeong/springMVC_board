@@ -13,4 +13,6 @@ public interface BoardService {
 
 	List<BoardDTO> listBoard(HashMap<String, Integer> map);
 
+	BoardDTO readBoard(int num);
+
 }

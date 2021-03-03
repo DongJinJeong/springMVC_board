@@ -34,4 +34,14 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectList(ns+"listBoard", map);
 	}
 
+	@Override
+	public void updateHit(int num) {
+		sqlSession.update(ns+"updateHit", num);
+	}
+
+	@Override
+	public BoardDTO detailBoard(int num) {
+		return sqlSession.selectOne(ns+"detailBoard", num);
+	}
+
 }

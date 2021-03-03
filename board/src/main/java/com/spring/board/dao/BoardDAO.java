@@ -13,4 +13,9 @@ public interface BoardDAO {
 
 	List<BoardDTO> listBoard(HashMap<String, Integer> map);
 
+	void updateHit(int num);
+
+	BoardDTO detailBoard(int num);
+
+
 }
