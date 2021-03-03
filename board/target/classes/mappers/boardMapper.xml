@@ -8,5 +8,19 @@
 		INSERT INTO board(num, title, writer, content, pwd)
 		VALUES ((SELECT nvl(max(num), 0)+1 FROM board), #{title}, #{writer}, #{content}, #{pwd})
 	</insert>
+	
+	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
+	
+	<select id="listBoard" parameterType="hashmap" resultType="board">
+		<![CDATA[
+			SELECT *
+			FROM (SELECT rownum, A.*
+					FROM (SELECT * FROM board ORDER BY num DESC) A
+					WHERE rownum <= #{end})
+			WHERE rownum >= #{begin}
+		]]>
+	</select>
 
 </mapper>

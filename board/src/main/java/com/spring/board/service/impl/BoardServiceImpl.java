@@ -1,5 +1,8 @@
 package com.spring.board.service.impl;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +20,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void insertBoard(BoardDTO boardDTO) {
 		boardDAO.insertBoard(boardDTO);
+	}
+
+	@Override
+	public int countBoard() {
+		return boardDAO.countBoard();
+	}
+
+	@Override
+	public List<BoardDTO> listBoard(HashMap<String, Integer> map) {
+		return boardDAO.listBoard(map);
 	}
 
 }

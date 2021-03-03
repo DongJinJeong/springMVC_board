@@ -1,5 +1,8 @@
 package com.spring.board.dao.impl;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -19,6 +22,16 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void insertBoard(BoardDTO boardDTO) {
 		sqlSession.insert(ns+"insertBoard", boardDTO);
+	}
+
+	@Override
+	public int countBoard() {
+		return sqlSession.selectOne(ns+"countBoard");
+	}
+
+	@Override
+	public List<BoardDTO> listBoard(HashMap<String, Integer> map) {
+		return sqlSession.selectList(ns+"listBoard", map);
 	}
 
 }
