@@ -11,6 +11,7 @@
 </head>
 <body>
 	<a href="${root}/writeform">글쓰기</a><br><br>
-	<a href="${root}/list">글목록</a>
+	<a href="${root}/list">글 목록</a><br><br>
+	<a href="${root}/testlist.do">글 목록 테스트</a><br><br>
 </body>
 </html>
