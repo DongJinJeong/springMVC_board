@@ -6,8 +6,8 @@ import com.spring.board.domain.TestDTO;
 
 public interface TestDAO {
 
-	List<TestDTO> testlist();
-
 	void testwrite(TestDTO testDTO);
+
+	List<TestDTO> testlist(String search_option, String keyword);
 
 }

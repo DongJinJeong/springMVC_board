@@ -6,6 +6,20 @@
 
 	<select id="findAll" parameterType="test" resultType="test">
 		SELECT * FROM test
+		<if test="search_option == 'all' ">
+			where id like '%'||#{keyword}||'%'
+					or name like '%' || #{keyword}||'%'
+					or choose like '%'||#{keyword}||'%'   
+		</if>
+		<if test="search_option == 'id' ">
+			where id like '%'||#{keyword}||'%'
+		</if>
+		<if test="search_option == 'name' ">
+			where name like '%'||#{keyword}||'%'
+		</if>
+		<if test="search_option == 'choose' ">
+			where choose like '%'||#{keyword}||'%'
+		</if>
 	</select>
 
 	<insert id="testwrite" parameterType="test">

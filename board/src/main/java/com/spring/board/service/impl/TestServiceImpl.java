@@ -16,13 +16,13 @@ public class TestServiceImpl implements TestService {
 	private TestDAO testDAO;
 
 	@Override
-	public List<TestDTO> testlist() {
-		return testDAO.testlist();
+	public void testwrite(TestDTO testDTO) {
+		testDAO.testwrite(testDTO);
 	}
 
 	@Override
-	public void testwrite(TestDTO testDTO) {
-		testDAO.testwrite(testDTO);
+	public List<TestDTO> testlist(String search_option, String keyword) {
+		return testDAO.testlist(search_option, keyword);
 	}
 
 }
