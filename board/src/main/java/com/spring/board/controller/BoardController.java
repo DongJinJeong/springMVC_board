@@ -81,4 +81,28 @@ public class BoardController {
 		return "read";
 	}
 	
+	@RequestMapping("/delete.do/{num}")
+	public String delete(@PathVariable(value="num") int num) {
+		boardService.delete(num);
+		return "redirect:/list";
+	}
+	
+	@RequestMapping("/updateform.do/{num}")
+	public String updateform(@PathVariable(value="num") int num, @PathVariable(value="pg") int pg, Model model) {
+		BoardDTO boardDTO = boardService.updateform(num);
+		model.addAttribute("boardDTO", boardDTO);
+		model.addAttribute("pg", pg);
+		return "updateform";
+	}
+	
+	@RequestMapping("/updateboard")
+	public String update(BoardDTO boardDTO) {
+		int ok = boardService.update(boardDTO);
+		if(ok == 1) {
+			return "redirect:/list";
+		} else { // 비밀번호가 틀린 경우
+			return "fail";
+		}
+	}
+	
 }

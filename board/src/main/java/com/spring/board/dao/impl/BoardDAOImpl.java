@@ -44,4 +44,19 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectOne(ns+"detailBoard", num);
 	}
 
+	@Override
+	public void delete(int num) {
+		sqlSession.delete(ns+"deleteBoard", num);
+	}
+
+	@Override
+	public BoardDTO updateform(int num) {
+		return sqlSession.selectOne(ns+"updateform",num);
+	}
+
+	@Override
+	public int update(BoardDTO boardDTO) {
+		return sqlSession.update(ns+"update", boardDTO);		
+	}
+
 }

@@ -17,5 +17,11 @@ public interface BoardDAO {
 
 	BoardDTO detailBoard(int num);
 
+	void delete(int num);
+
+	BoardDTO updateform(int num);
+
+	int update(BoardDTO boardDTO);
+
 
 }

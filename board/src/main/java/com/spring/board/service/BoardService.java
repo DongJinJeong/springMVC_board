@@ -15,4 +15,10 @@ public interface BoardService {
 
 	BoardDTO readBoard(int num);
 
+	void delete(int num);
+
+	BoardDTO updateform(int num);
+
+	int update(BoardDTO boardDTO);
+
 }
