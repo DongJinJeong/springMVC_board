@@ -8,6 +8,7 @@
 	<typeAliases>
 		<typeAlias type="com.spring.board.domain.BoardDTO" alias="board"/>
 		<typeAlias type="com.spring.board.domain.TestDTO" alias="test"/>
+		<typeAlias type="com.spring.board.domain.LoginVO" alias="login"/>
 	</typeAliases>
 	
 </configuration>
