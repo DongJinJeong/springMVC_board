@@ -39,7 +39,7 @@ public class TestDAOImpl implements TestDAO{
 
 	@Override
 	public void testupdate(TestDTO testDTO) {
-		sqlSession.update(ns+"update", testDTO);
+		sqlSession.update(ns+"testupdate", testDTO);
 	}
 	
 }
