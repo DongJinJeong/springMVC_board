@@ -25,4 +25,14 @@ public class TestServiceImpl implements TestService {
 		return testDAO.testlist(search_option, keyword);
 	}
 
+	@Override
+	public TestDTO testread(String id) {
+		return testDAO.testread(id);
+	}
+
+	@Override
+	public void testupdate(TestDTO testDTO) {
+		testDAO.testupdate(testDTO);
+	}
+
 }

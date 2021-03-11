@@ -42,7 +42,7 @@
 		</tr>
 		<c:forEach var="b" items="${list}">
 			<tr>
-				<td>${b.id}</td>
+				<td><a href="/testread.do/${b.id}">${b.id}</a></td>
 				<td>${b.name}</td>
 				<td>${b.yn}</td>
 				<td>${b.choose}</td>

@@ -26,5 +26,15 @@
 		INSERT INTO test(id, name, yn, choose)
 		VALUES (#{id}, #{name}, #{yn}, #{choose})
 	</insert>
+	
+	<select id="read" parameterType="string" resultType="test">
+		SELECT * FROM test WHERE id=#{id}
+	</select>
+	
+	<update id="update" parameterType="test">
+		UPDATE test
+		SET name=#{name}, yn=#{yn}, choose=#{choose}
+		WHERE id=#{id}
+	</update>
 
 </mapper>

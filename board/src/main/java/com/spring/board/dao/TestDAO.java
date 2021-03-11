@@ -10,4 +10,8 @@ public interface TestDAO {
 
 	List<TestDTO> testlist(String search_option, String keyword);
 
+	TestDTO testread(String id);
+
+	void testupdate(TestDTO testDTO);
+
 }

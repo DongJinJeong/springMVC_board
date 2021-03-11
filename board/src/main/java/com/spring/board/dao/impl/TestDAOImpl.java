@@ -31,5 +31,15 @@ public class TestDAOImpl implements TestDAO{
         map.put("keyword", keyword);
 		return sqlSession.selectList(ns+"findAll", map);
 	}
+
+	@Override
+	public TestDTO testread(String id) {
+		return sqlSession.selectOne(ns+"read", id);
+	}
+
+	@Override
+	public void testupdate(TestDTO testDTO) {
+		sqlSession.update(ns+"update", testDTO);
+	}
 	
 }
